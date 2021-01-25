@@ -24,6 +24,12 @@ DROP DATABASE IF EXISTS languages;
 -- ex 1
 CREATE TABLE languages ( id INT AUTO_INCREMENT PRIMARY KEY, language VARCHAR(20) );
 
+    --ou
+    CREATE TABLE languages (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        language VARCHAR(20)
+    );
+
 -- ex 2
 CREATE TABLE tools ( id INT AUTO_INCREMENT PRIMARY KEY, tool VARCHAR(20) );
 
@@ -51,3 +57,38 @@ DROP TABLE ide;
 -- TP
 CREATE TABLE clients ( id INT AUTO_INCREMENT PRIMARY KEY, lastname VARCHAR(20), firstname VARCHAR(20), 
 birthDate DATE, address VARCHAR(20), firstPhoneNumber INT, secondPhoneNumber INT, mail VARCHAR(20) );
+
+-- PARTIE 3
+-- ex 1
+ALTER TABLE languages
+ADD versions VARCHAR(50);
+
+-- ex 2
+ALTER TABLE frameworks
+ADD version INT;
+
+-- ex 3
+ALTER TABLE languages
+CHANGE versions version;
+
+-- ex 4
+ALTER TABLE frameworks
+CHANGE name framework VARCHAR(20);
+
+-- ex 5
+ALTER TABLE frameworks
+MODIFY version VARCHAR(10);
+
+-- TP
+ALTER TABLE clients
+    -> DROP secondPhoneNumber;
+
+ALTER TABLE clients
+    -> CHANGE firstPhoneNumber phoneNumber INT;
+
+ALTER TABLE clients
+    -> MODIFY phoneNumber VARCHAR(20);
+
+ALTER TABLE clients
+    -> ADD zipCode VARCHAR(20),
+    -> ADD city VARCHAR(20);
