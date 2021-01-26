@@ -107,6 +107,47 @@ INSERT INTO frameworks (framework, version) VALUES ('Symfony', 'version 2.8'), (
 SELECT language, version FROM languages;
 
 -- ex 2
-SELECT version FROM languages;
+SELECT *
+    -> FROM languages
+    -> WHERE language IN ('PHP');
 
 -- ex 3
+SELECT *
+    -> FROM languages
+    -> WHERE language IN ('PHP', 'JavaScript');
+
+-- ex 4
+SELECT *
+    -> FROM languages
+    -> WHERE id IN ('3', '5', '7');
+
+-- ex 5
+SELECT *
+    -> FROM languages
+    -> WHERE language = 'JavaScript' LIMIT 2;
+
+-- ex 6
+SELECT *
+FROM languages
+WHERE NOT language = 'PHP';
+
+-- ex 7
+SELECT *
+FROM languages
+ORDER BY language;
+
+-- PARTIE 6
+-- ex 1
+SELECT *
+FROM frameworks
+WHERE version > 'version 2' AND version < 'version 3';
+
+-- ex 2
+SELECT *
+FROM frameworks
+WHERE id IN (1, 3);
+
+-- ex 3
+
+
+
