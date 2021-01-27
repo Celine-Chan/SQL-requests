@@ -148,6 +148,26 @@ FROM frameworks
 WHERE id IN (1, 3);
 
 -- ex 3
+SELECT *
+FROM ide
+WHERE date > '2010-01-01' AND date < '2011-12-31';
 
+-- PARTIE 7
+-- ex1
+DELETE FROM languages
+WHERE language = 'HTML';
+
+-- ex 2
+UPDATE frameworks
+SET framework = 'Symfony2'
+WHERE framework = 'Symfony';
+
+-- ex 3
+UPDATE languages
+SET version = 'version 5.1'
+WHERE version = 'version 5';
+
+-- PARTIE 8
+-- ex 1
 
 
