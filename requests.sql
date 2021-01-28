@@ -130,6 +130,8 @@ SELECT *
 SELECT *
 FROM languages
 WHERE NOT language = 'PHP';
+--ou
+WHERE language != 'PHP';
 
 -- ex 7
 SELECT *
@@ -141,6 +143,7 @@ ORDER BY language;
 SELECT *
 FROM frameworks
 WHERE version > 'version 2' AND version < 'version 3';
+-- ou WHERE version LIKE 'version2.%';
 
 -- ex 2
 SELECT *
@@ -151,6 +154,7 @@ WHERE id IN (1, 3);
 SELECT *
 FROM ide
 WHERE date > '2010-01-01' AND date < '2011-12-31';
+-- ou WHERE date BETWEEN '2010-01-01' AND '2011-12-31'; 
 
 -- PARTIE 7
 -- ex1
@@ -165,9 +169,32 @@ WHERE framework = 'Symfony';
 -- ex 3
 UPDATE languages
 SET version = 'version 5.1'
-WHERE version = 'version 5';
+WHERE version = 'version 5' AND language = 'JavaScript';
 
 -- PARTIE 8
 -- ex 1
+SELECT *
+FROM languages
+LEFT JOIN frameworks 
+ON frameworks.languagesId = languages.id;
+
+-- ex 2
+SELECT *
+FROM frameworks
+INNER JOIN languages ON frameworks.languagesId = languages.id;
+
+-- ex 3
+SELECT languages.name as language, COUNT(frameworks.name) as total
+FROM frameworks
+INNER JOIN languages ON frameworks.languagesId = languages.id
+GROUP BY languages.name;
+
+-- ex 4
+SELECT languages.name as language, COUNT(frameworks.name) as totalframework
+FROM languages
+INNER JOIN frameworks 
+ON frameworks.languagesId = languages.id
+GROUP BY languages.name
+HAVING COUNT(frameworks.name) > 3;
 
 
