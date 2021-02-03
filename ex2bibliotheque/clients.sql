@@ -1,0 +1,2 @@
+INSERT INTO clients (lastname, firstname, birthdate, mail, id_bookType) VALUES ('Baggins', 'Frodo', '1924-01-08', 'frodobaggins@shire.com', 1), ('Uzumaki', 'Naruto', '1965-06-21', 'hokage@kitsune.com', 2), ('Soma', 'Kyo', '1995-07-25', 'neko@nezumi.com', 3), ('Lothbrok', 'Lagertha', '1050-05-14', 'vikings@raven.com', 4), ('Abe no', 'Seimei', '1548-12-06', 'onmyouji@game.com', 2), ('kamado', 'Tanjiro', '1840-03-14', 'kimetsuno@yaiba.com', 3);
+SELECT * FROM clients;
